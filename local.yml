@@ -6,8 +6,6 @@
       tags: always
       apt:
         update_cache: true
-      changed_when: False
-      when: ansible_distribution in ["Debian", "Ubuntu", "Linux Mint", "Pop!_OS"]
 
 - hosts: localhost
   tags: base
@@ -23,5 +21,3 @@
       apt:
         autoclean: true
         autoremove: true
-      changed_when: false
-      when: ansible_distribution in ["Debian", "Ubuntu", "Linux Mint", "Pop!_OS"]
