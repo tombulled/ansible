@@ -1,0 +1,5 @@
+- name: software | neofetch
+  tags: software,neofetch
+  package:
+    name: neofetch
+    state: latest

@@ -1,0 +1,23 @@
+- hosts: localhost
+  tags: always
+  become: true
+  pre_tasks:
+    - name: pre-run | update package cache
+      tags: always
+      apt:
+        update_cache: true
+
+- hosts: localhost
+  tags: base
+  become: true
+  roles:
+    - base
+
+- hosts: localhost
+  become: true
+  tasks:
+    - name: post-run | cleanup package cache
+      tags: always
+      apt:
+        autoclean: true
+        autoremove: true

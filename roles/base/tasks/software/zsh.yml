@@ -1,0 +1,5 @@
+- name: software | zsh
+  tags: software,zsh
+  package:
+    name: zsh
+    state: latest
