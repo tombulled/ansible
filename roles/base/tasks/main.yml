@@ -1,0 +1,4 @@
+- block:
+  # Install software
+  - import_tasks: software/neofetch.yml
+  - import_tasks: software/zsh.yml

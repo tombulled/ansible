@@ -1,0 +1,6 @@
+- name: software | zsh
+  tags: software,zsh
+  package:
+    name: zsh
+    state: latest
+  when: ansible_distribution in ["Debian", "Ubuntu", "Linux Mint", "Pop!_OS"]
