@@ -41,7 +41,7 @@ sudo apt update
 info "Installing Figlet"
 sudo apt install -y figlet
 
-3. Display the Banner
+# 3. Display the Banner
 clear
 echo "$(green "$(figlet -ct -f big   "$BANNER_PRIMARY")")"
 echo "$(cyan  "$(figlet -ct -f small "$BANNER_SECONDARY")")"
