@@ -1,0 +1,36 @@
+# Ubuntu
+- name: Update ubuntu servers
+  hosts: pihole,bridge
+  remote_user: ubuntu
+
+  tasks:
+    - name: Update repositories cache
+      become: true
+      ansible.builtin.apt:
+        update_cache: true
+    - name: Upgrade packages
+      become: true
+      ansible.builtin.apt:
+        upgrade: yes
+    - name: Remove useless packages from the cache
+      become: true
+      ansible.builtin.apt:
+        autoclean: true
+    - name: Remove dependencies that are no longer required
+      become: true
+      ansible.builtin.apt:
+        autoremove: true
+
+# OpenWrt
+- name: Update OpenWrt servers
+  hosts: openwrt
+  remote_user: root
+
+  tasks:
+    - name: Update cache
+      ansible.builtin.command: opkg update
+    # Disabled because use of `opkg upgrade` is strongly discouraged
+    # "Blindly upgrading packages (manually or via script) can lead you into all sorts of trouble."
+    # Reference: https://openwrt.org/docs/guide-user/additional-software/show_upgradable_packages_after_ssh_login
+    # - name: Upgrade packages
+    #   ansible.builtin.command: opkg list-upgradable | cut -f 1 -d " " | xargs -r opkg upgrade
