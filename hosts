@@ -1,0 +1,11 @@
+[openwrt]
+openwrt.tom.lan
+
+[pihole]
+pihole.tom.lan
+
+[bridge]
+bridge.tom.lan
+
+[desktop]
+xps-15.tom.lan
