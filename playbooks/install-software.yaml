@@ -41,3 +41,8 @@
       ansible.builtin.package:
         name: python3-pip
         state: latest
+    - name: install ethtool
+      become: true
+      ansible.builtin.package:
+        name: ethtool
+        state: latest
