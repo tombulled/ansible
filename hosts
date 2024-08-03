@@ -1,11 +1,8 @@
-[openwrt]
-openwrt.tom.lan
-
-[pihole]
-pihole.tom.lan
+[dns]
+dns.tom.lan ansible_user=ubuntu
 
 [bridge]
-bridge.tom.lan
+bridge.tom.lan ansible_user=ubuntu
 
-[desktop]
-xps-15.tom.lan
+[server]
+server.tom.lan ansible_user=user
